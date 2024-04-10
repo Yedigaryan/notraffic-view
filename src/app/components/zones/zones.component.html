@@ -1,0 +1,11 @@
+<h1 class="w-[100%] text-center text-4xl border-b-black border-2">List of Zones</h1>
+<div class="flex justify-center w-[100%] flex-wrap">
+  <div class="flex justify-center items-center w-[100%] mb-2 mt-2 text-xl" *ngFor="let zone of zoneHelper.allZones">
+    <div (click)="selectZones(zone)" class="cursor-pointer">{{zone.name}}</div>
+    <div class="ml-3 cursor-pointer text-xs text-red-700 border-red-700 p-1 border-2 font-bold " (click)="deleteZone(zone.id)">DELETE</div>
+  </div>
+</div>
+
+
+
+<button class="border-2 text-3xl border-black p-2.5 hover:scale-110 focus:scale-90" (click)="addNewZone()">Add new Zone</button>

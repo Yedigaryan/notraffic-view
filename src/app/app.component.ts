@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {ZoneApiService} from "./services/zone-api.service";
+import {ZoneHelperService} from "./services/zone-helper.service";
+import {take} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -10,4 +14,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'notraffic-view';
+
+  constructor(private readonly zoneApi: ZoneApiService, private readonly zoneHelper: ZoneHelperService) {
+    zoneApi.getZones().pipe(take(1)).subscribe(zones => {
+      zoneHelper.allZones = zones;
+    })
+  }
 }

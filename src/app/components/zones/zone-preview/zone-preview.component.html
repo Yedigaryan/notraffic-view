@@ -1,0 +1,12 @@
+<div class="flex justify-center flex-wrap ">
+  <div class="flex w-[100%] justify-center mb-2">
+  <h1 class="text-4xl font-bold ">{{currentZone?.name}}</h1>
+  </div>
+  <svg #chartContainer id="chartContainer" style="border: 1px solid black;" width="1000" height="700"
+       xmlns="<http://www.w3.org/2000/svg>">
+  </svg>
+
+  <div class="flex w-[100%] justify-center mt-4">
+  <button [routerLink]="['..']" class="border-2 border-black p-2 hover:scale-110 focus:scale-90 text-2xl ">Back</button>
+  </div>
+</div>

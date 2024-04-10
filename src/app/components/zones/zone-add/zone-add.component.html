@@ -1,0 +1,15 @@
+<form class="flex flex-wrap justify-center pt-8" [formGroup]="zoneForm" (submit)="addZone()">
+
+  <svg class="cursor-pointer" (polygonCreated)="handlePolygonCreated($event)" #chartContainerAdd id="chartContainerAdd"
+       appDrawPolygon style="border: 1px solid black;" width="1000" height="700" xmlns="<http://www.w3.org/2000/svg>">
+  </svg>
+
+  <div class="flex justify-center w-[100%] mt-2">
+    <input formControlName="name"  id="zoneName" type="text" placeholder="Zone name">
+    <button class="border-2 border-black p-2 hover:scale-110 focus:scale-90 " [disabled]="zoneForm.invalid" type="submit">Add zone</button>
+  </div>
+
+
+</form>
+
+
